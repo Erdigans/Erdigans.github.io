@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      text-align: center;
+      max-width: 500px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      animation: pop 1s ease-out;
+    }
+
+    h1 {
+      color: #ff5e78;
+      font-size: 36px;
+      margin-bottom: 10px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    p {
+      font-size: 18px;
+      color: #555;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    .name {
+      font-weight: bold;
+      color: #333;
+      font-size: 20px;
+    }
+
+    @keyframes pop {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* Balon animasi */
+    .balloon {
+      position: absolute;
+      bottom: -100px;
+      width: 40px;
+      height: 60px;
+      background: #ff6f91;
+      border-radius: 50%;
+      animation: floatUp 10s linear infinite;
+    }
+
+    .balloon:nth-child(1) { left: 20%; animation-delay: 0s; }
+    .balloon:nth-child(2) { left: 40%; animation-delay: 2s; background: #ffc75f; }
+    .balloon:nth-child(3) { left: 60%; animation-delay: 4s; background: #845ec2; }
+    .balloon:nth-child(4) { left: 80%; animation-delay: 6s; background: #4d96ff; }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-120vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Musik -->
+  <audio autoplay loop>
+    <source src="saengil.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Balon -->
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+
+  <!-- Kartu ucapan -->
+  <div class="card">
+    <h1>🎉 Happy Birthday 🎉</h1>
+    <p class="name">To: Keenan</p>
+    <p>Wishing you a day filled with happiness,</p>
+    <p>smiles, and beautiful memories.</p>
+    <p>— From Erdi</p>
+  </div>
+
+</body>
+</html>
